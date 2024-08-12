@@ -22,8 +22,8 @@
 
 // 2. 접근하는 방법
 // console.log("1", person.name);
-// console.log("1", person.age);
-// console.log("1", person.gender);
+// console.log("2", person.age);
+// console.log("3", person.gender);
 
 // 3. 객체 메소드(객체가 가진 여러가지 기능 : Object.~~)
 // 3-1. Object.key() : key를 가져오는 메소드
