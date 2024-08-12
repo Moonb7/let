@@ -8,7 +8,6 @@
 
     <style>
         * {
-            background-color: rgb(170, 192, 178);
             font-size: 1.15rem;
         }
     </style>
@@ -307,6 +306,64 @@
     </ul>
     <p style="color: gray;">clear를 통해 요소를 float요소 아래에 위치할 수 있게 할 수 있습니다.</p>
     <hr>
+
+    <h3>position</h3>
+    문서상의 요소를 배치하는 방법을 정의합니다<div class=""></div>
+    <ul>
+        <li>position : 난 이렇게 배치할거야;</li>
+        <ul>
+            <li>static : 기본값. 요소를 일반적인 문서 흐름에 따라 배치합니다.</li>
+            <li>relative : 일반적인 문서 흐름에 따라 배치하되, 상하좌우 위치 값에 따라 오프셋을 적용합니다.</li>
+            <li>absolute : 일반적인 문서 흐름에서 제외되고, 가장 가까운 position 지정 요소에 상위요소에 대해 상대적으로 오프셋을 적용합니다. 다른 요소가 이것을 지정한 요소를 무시하여
+                겹칠 수도 있습니다.</li>
+            <li>fixed : 일반적인 문서 흐름에서 제외되고, 지정한 위치에 고정합니다. 스크롤 이동을 해도 고정으로 정해진 위치에 있습니다.</li>
+            <li>sticky : 일반적인 문서 흐름에 따라 배치가 되고 스크롤 되는 상위 요소를 기준으로 오프셋을 적용합니다. 자기가 지정한 위치까지 고정이 됩니다. </li>
+        </ul>
+        <li>top : 위면에서부터 얼만큼 떨어뜨릴거야;</li>
+        <li>right : 오른쪽면에서부터 얼만큼 떨어뜨릴거야</li>
+        <li>left : 왼쪽에서부터 얼만큼 떨어뜨릴거야</li>
+        <li>bottom : 아래에서부터 얼만큼 떨어뜨릴거야</li>
+    </ul>
+    <hr>
+
+    <h3>flexbox</h3>
+    박스 내 요소 간의 공간 배분과 정렬 기능을 제공하기 위한 1차원 레이아웃 모델입니다. <br>
+    레이아웃을 다룰 때 한 번에 하나의 차원(행(row)이나 열(column))만을 다룬다는 특성이 있습니다. <br>
+    flex 컨테이너라고도 합니다.(요소들을 포함하기 때문) 만들기 위해 display:flex;를 적용해야 합니다. </p>
+    적용 전
+    </p>
+    <div style="background-color: red;">
+        <div class="item">하나</div>
+        <div class="item">둘</div>
+        <div class="item">셋</div>
+    </div>
+    </p>
+    적용 후
+    </p>
+    <div style="background-color: yellow;">
+        <div style="display: flex;">
+            <div class="item">하나</div>
+            <div class="item">둘</div>
+            <div class="item">셋</div>
+        </div>
+    </div> </p>
+    flex-direction 속성은 flexbox 내 요소를 배치할 때 사용할 주축 및 방향(정방향, 역방향)을 지정합니다.
+    <ul>
+        <li>row : 기본값, 주축은 행이고 방향은 콘텐츠의 방향과 동일</li>
+        <li>row-reverse : 주축은 행이고 방향은 콘텐츠의 방향과 반대</li>
+        <li>column-reverse : 주축은 열이고 방향은 콘텐츠의 방향과 동일</li>
+        <li>column-reverse : 주축은 열이고 방향은 콘텐츠의 방향과 반대</li>
+    </ul> </p>
+    flexbox를 다루기 위해 다음과 같은 속성들을 사용할 수 있습니다.
+    <ul>
+        <li>주축 배치 방법 : justify-content</li>
+        <li>교차축 배치 방법 : align-items</li>
+        <li>교차축 개별요소 배치 방법 : align-self</li>
+        <li>
+            줄 바꿈 여부 : flex-wrap <br>
+            개별 요소들의 하위요소들의 도합 크기가 컨테이너 주출 길이보다 커졌을 때의 처리 방법 및 방향을 정의합니다.
+        </li>
+    </ul>
 
 
 </body>
