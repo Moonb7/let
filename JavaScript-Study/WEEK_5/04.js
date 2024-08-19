@@ -13,7 +13,7 @@ class Rectangle {
 
     // width를 위한 getter
     get width() {
-        return this.width;
+        return this._width;
     }
 
     // width를 위한 setter
@@ -30,7 +30,7 @@ class Rectangle {
 
     // height를 위한 getter
     get height() {
-        return this.height;
+        return this._height;
     }
 
     // height를 위한 setter
@@ -38,15 +38,22 @@ class Rectangle {
         // 검증 1 : value가 음수이면 오류!
         if (value <= 0) {
             console.log('세로길이는 0보다 커야 합니다.');
+            return;
         } else if (typeof value !== 'number') {
             console.log('[오류] 세로길이로 입력된 값이 숫자타입이 아닙니다!')
             return;
         }
         this._height = value;
     }
+    // getArea : 가로 * 세로 => 넓이
+    getArea () {
+        const area = this._width * this._height;
+        console.log(`넓이는 => ${area}입니다.`)
+    }
 }
 
 // instance 생성
 const rect1 = new Rectangle(10, 20);
+rect1.getArea();
 // const rect2 = new Rectangle(10, 30);
 // const rect3 = new Rectangle(15, 20);

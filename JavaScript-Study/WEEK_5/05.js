@@ -17,62 +17,107 @@
 // 3. 만든 인스턴스를 통해서 마지막에 set 해서 get 하는 로직까지
 
 class Car {
-    constructor (modelName, modelYear, type, price) {
-        this.modelName = modelName;
-        this.modelYear = modelYear;
-        this.type = type;
-        this.price = price;
+    constructor(modelName, modelYear, type, price) {
+        this._modelName = modelName;
+        this._modelYear = modelYear;
+        this._type = type;
+        this._price = price;
+    }
+
+    get modelName() {
+        return this._modelName;
+    }
+
+    // 입력값에 대한 검증까지 가능하다
+    set modelName(value) {
+        // 유효성 검사 // 이 값이 확실한 값인지 검사 사용자가 잘못된 값을 넣어줬는지 검사 특히 은행같이 중요한 기관은 유효성 검사가 필수다.
+        if (value.length <= 0) {
+            console.log('[오류] 모델명이 입력되지 않았습니다. 확인해주세요!');
+            return;
+        } else if (typeof value !== 'string') {
+            console.log('[오류] 입력된 모델명이 문자형이 아닙니다!');
+            return;
+        }
+
+        // 검증이 완료된 경우에만 setting!
+        this._modelName = value;
+    }
+
+    get modelYear() {
+        return this._modelYear;
+    }
+
+    set modelYear(value) {
+        // 유효성 검사
+        if (value.length !== 4) {
+            // 년도에 대한 유효성 검증 로직들은 googling하면 엄청 나옵니다.
+            console.log('[오류] 입력된 년도가 4자리가 아닙니다. 확인해주세요!');
+            return;
+        } else if (typeof value !== 'string') {
+            console.log('[오류] 입력된 모델명이 문자형이 아닙니다!');
+            return;
+        }
+
+        // 검증이 완료된 경우에만 setting!
+        this._modelName = value;
+    }
+
+    get type() {
+        return this._type;
+    }
+
+    set type(value) {
+        if (value.length <= 0) {
+            // 년도에 대한 유효성 검증 로직들은 googling하면 엄청 나옵니다.
+            console.log('[오류] 타입이 입력되지 않았습니다. 확인해주세요!');
+            return;
+        } else if (value !== 'g' && value !== 'd' && value !== 'e') { // g(가솔린), d(디젤), e(전기차)가 아닌경우 요류
+            console.log("[오류] 입력된 타입이 잘못되었습니다. 확인해주세요!");
+            return;
+        }
+
+        this._type = value;
+    }
+    get price() {
+        return this._price;
+    }
+
+    set price(value) {
+        if (typeof value !== 'number') {
+            console.log('[오류] 가격으로 입력된 값이 숫자가 아닙니다. 확인해주세요!');
+            return;
+        } else if (value < 1000000) {
+            console.log('[오류] 가격은 100만원보다 작을 수 없습니다. 확인해주세요!');
+            return;
+        }
+
+        // 검증이 완료된 경우
+        this._price = value;
     }
 
     // 클락션을 울리는 메서드
-    makeNoise () {
-        console.log(`${this.modelName} : 빵!`);
+    makeNoise() {
+        console.log(`${this._modelName} : 빵!`);
     }
 
-    getModelYear () {
-        console.log(`${this.modelName}의 년도는 ${this.modelYear}년입니다.`);
+    getModelYear() {
+        console.log(`${this._modelName}의 년도는 ${this._modelYear}년입니다.`);
     }
-
-    get modelName () {
-        return this.modelName;
-    }
-
-    set modelName (value) {
-
-    }
-
-    get modelYear () {
-
-    }
-
-    set modelYear (value) {
-
-    }
-
-    get type () {
-
-    }
-
-    set type (value) {
-
-    }
-    get price () {
-
-    }
-
-    set price (value) {
-
-    }
-
 }
 
 // 자동차 만들기
 const car1 = new Car('Sorento', '2023', 'e', 5000);
 const car2 = new Car('SM5', '1999', 'g', 3000);
 const car3 = new Car('Palisade', '2010', 'd', 4500);
-car1.makeNoise();
-car1.getModelYear();
-car2.makeNoise();
-car2.getModelYear();
-car3.makeNoise();
-car3.getModelYear();
+// car1.makeNoise();
+// car1.getModelYear();
+// car2.makeNoise();
+// car2.getModelYear();
+// car3.makeNoise();
+// car3.getModelYear();
+
+// getter 예시1
+console.log(car1.modelName);
+// setter 예시1
+car1.modelName = 1;
+console.log(car1.modelName);
