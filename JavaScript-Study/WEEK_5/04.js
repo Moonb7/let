@@ -6,6 +6,7 @@
 
 class Rectangle {
     constructor(height, width) {
+        // underscore : private(은밀하고, 감춰야 할 때)
         this._height = height;
         this._width = width;
     }
