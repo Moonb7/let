@@ -32,6 +32,38 @@ class Car {
     getModelYear () {
         console.log(`${this.modelName}의 년도는 ${this.modelYear}년입니다.`);
     }
+
+    get modelName () {
+        return this.modelName;
+    }
+
+    set modelName (value) {
+
+    }
+
+    get modelYear () {
+
+    }
+
+    set modelYear (value) {
+
+    }
+
+    get type () {
+
+    }
+
+    set type (value) {
+
+    }
+    get price () {
+
+    }
+
+    set price (value) {
+
+    }
+
 }
 
 // 자동차 만들기
