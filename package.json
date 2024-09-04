@@ -4,11 +4,14 @@
   },
   "name": "package-manager",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "repository": "https://github.com/Moonb7/Study.git",
   "author": "Jinsu_Mun <answlstn13@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.6.1"
   }
+  
 }
