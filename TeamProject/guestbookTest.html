@@ -141,16 +141,10 @@
         // Firebase SDK 라이브러리 가져오기
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
         import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, updateDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import dotenv from 'dotenv';
 
         // Firebase 구성 정보 설정
         const firebaseConfig = {
-            apiKey: "AIzaSyBsW3OcOst5XW7uj0zURYXk1xpPOSyWAjs",
-            authDomain: "team-introduction-project.firebaseapp.com",
-            projectId: "team-introduction-project",
-            storageBucket: "team-introduction-project.appspot.com",
-            messagingSenderId: "605481305770",
-            appId: "1:605481305770:web:e41f75c0f952528e0772d3",
-            measurementId: "G-LJQZNSJV5R"
         };
         
         // Firebase 인스턴스 초기화
